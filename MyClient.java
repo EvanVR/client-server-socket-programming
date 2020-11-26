@@ -5,11 +5,14 @@ import java.util.Scanner;
 public class MyClient{
 
     public static void main(String args[]) throws Exception{
-	
+
 	Scanner scan=new Scanner(System.in);
 	String strC=new String();
 	String strS=new String();
 	strC="";strS="";
+
+
+  //checking client comment 
     	Socket s=new Socket("localhost",9999);
 	DataInputStream dis=new DataInputStream(s.getInputStream());
 	DataOutputStream dos=new DataOutputStream(s.getOutputStream());
@@ -27,7 +30,7 @@ public class MyClient{
 		    break exitLoops;
 		}
 	    }
-	    
+
 	    System.out.println("\nServer says :");
 	    while(!strS.equals("done")){
 		strS=(String)dis.readUTF();
@@ -38,11 +41,11 @@ public class MyClient{
 		}
 		System.out.println(strS);
 	    }
-	    
-	} 
-      
+
+	}
+
 	dos.close();
         dis.close();
-	s.close();   
+	s.close();
     }
 }
