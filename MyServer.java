@@ -14,6 +14,8 @@ public class MyServer{
 	DataOutputStream dos=new DataOutputStream(s.getOutputStream());
 	strC="";strS="";
 	
+	//Checking for comments	
+
 	exitLoops:
 	while(!strC.equals("stop"))
 	{
